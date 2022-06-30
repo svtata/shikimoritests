@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            "com.codeborne:selenide:6.6.3",
+            "org.junit.jupiter:junit-jupiter:5.8.2",
+            "ch.qos.logback:logback-classic:1.2.11",
+            "com.github.javafaker:javafaker:1.0.2",
+            'com.google.guava:guava:31.1-jre'
+    )
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+}
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
